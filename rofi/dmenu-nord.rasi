@@ -1,0 +1,100 @@
+* {
+    bg: #2e3440;
+    fg: #e5e9f0;
+    accent: #81a1c1;
+		accent-2: #5e81ac;
+    background-color: @bg;
+    text-color: @fg;
+    font: "SauceCodePro Nerd Font Mono Semibold 12";
+		font-big: "SauceCodePro Nerd Font Mono Semibold 13.5";
+}
+window {
+    anchor:     north;
+    location:   north;
+    margin: 	4.5px;
+    width:      100%;
+    border-radius: 6px;
+    children:   [ horibox ];
+}
+
+prompt {
+	background-color: @accent;
+	color: @fg;
+	padding: 2px 0px 2px 6px;
+}
+
+textbox-prompt {
+  margin: 0px -2px;
+	padding: 1px 0px;
+	font: @font-big;
+  content: "";
+  background-color: @accent-2;
+  text-color: @accent;
+  expand: false;
+}
+
+horibox {
+    orientation: horizontal;
+    children:   [ prompt, textbox-prompt, entry-container, listview ];
+}
+	
+listview {
+    layout:     horizontal;
+    spacing:    5px;
+    lines:      100;
+}
+
+textbox-entry {
+	margin: 0px -2px;
+	padding: 1px 0px;
+	font: @font-big;
+  content: "";
+  background-color: @bg;
+  text-color: @accent-2;
+  expand: false;
+}
+
+entry {
+	background-color: @accent-2;
+	expand: false;
+	width: 7em;
+	padding: 2px 2px 2px 6px;
+}
+
+
+entry-container {
+	/* padding: 2px 2px 2px -2px; */
+	width: 10em;
+  expand: false;
+	orientation: horizontal;
+	children: [ entry, textbox-entry ];
+}
+
+
+textbox-element {
+	margin: 0px 2px;
+	padding: 1px 0px;
+	font: @font-big;
+  content: "";
+  background-color: @bg;
+  text-color: @accent-2;
+  expand: false;
+}
+
+element selected {
+    text-color: #5e81ac;
+}
+
+element {
+		children: [textbox-element, element-text];
+}
+
+element-text {
+    background-color: @bg;
+		padding: 2px 2px 2px -2px;
+}
+
+element-text, element-icon {
+  background-color: inherit;
+  text-color: inherit;
+}

@@ -1,0 +1,7 @@
+configuration {
+	modi: "drun,combi,run";
+	combi-modi: "drun,run";
+	font: "SauceCodePro Nerd Font Mono Semibold 12";
+}
+
+@theme "dmenu-nord"
