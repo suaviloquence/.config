@@ -1,22 +1,11 @@
-###
-# basic config
-###
-
 # meta
 set $mod Mod4
-# alt
 set $alt Mod1
 
-# monitors
-set $left DisplayPort-0
-set $right DisplayPort-1
-
-# Use meta+mouse to drag floating windows
+# use meta+mouse to drag floating windows
 floating_modifier $mod
 
-# don't focus windows just by hovering over them
 # focus_follows_mouse no
-focus_follows_mouse yes
 
 font pango:SauceCodePro Nerd Font Semibold 12
 
@@ -24,21 +13,16 @@ font pango:SauceCodePro Nerd Font Semibold 12
 # borders & gaps
 ###
 
-# hide borders touching the edges of the screen
-#hide_edge_borders both
-
-# use no borders by default, but border the focused window
+# no borders for any window
 for_window [class="^.*"] border pixel 0
 
 # 10 px between containers
 gaps inner 10
 
-# smart_gaps on
-
-
 ###
 # workspaces
 ###
+
 set $ws1  "1: i"
 set $ws2  "2: ii"
 set $ws3  "3: iii"
@@ -50,230 +34,138 @@ set $ws8  "8: viii"
 set $ws9  "9: ix"
 set $ws10 "10: x"
 
-set $ws11 "11: i"
-set $ws12 "12: ii"
-set $ws13 "13: iii"
-set $ws14 "14: iv"
-set $ws15 "15: v"
-set $ws16 "16: vi"
-set $ws17 "17: vii"
-set $ws18 "18: viii"
-set $ws19 "19: ix"
-set $ws20 "20: x"
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
 
-# switch to workspace
-bindsym $mod+1 exec ~/.config/i3/scripts/workspace.sh switch 1
-bindsym $mod+2 exec ~/.config/i3/scripts/workspace.sh switch 2
-bindsym $mod+3 exec ~/.config/i3/scripts/workspace.sh switch 3
-bindsym $mod+4 exec ~/.config/i3/scripts/workspace.sh switch 4
-bindsym $mod+5 exec ~/.config/i3/scripts/workspace.sh switch 5
-bindsym $mod+6 exec ~/.config/i3/scripts/workspace.sh switch 6
-bindsym $mod+7 exec ~/.config/i3/scripts/workspace.sh switch 7
-bindsym $mod+8 exec ~/.config/i3/scripts/workspace.sh switch 8
-bindsym $mod+9 exec ~/.config/i3/scripts/workspace.sh switch 9
-bindsym $mod+0 exec ~/.config/i3/scripts/workspace.sh switch 10
-
-# switch to workspace on alternate screen
-bindsym $mod+$alt+1 exec ~/.config/i3/scripts/workspace.sh --invert switch 1
-bindsym $mod+$alt+2 exec ~/.config/i3/scripts/workspace.sh --invert switch 2
-bindsym $mod+$alt+3 exec ~/.config/i3/scripts/workspace.sh --invert switch 3
-bindsym $mod+$alt+4 exec ~/.config/i3/scripts/workspace.sh --invert switch 4
-bindsym $mod+$alt+5 exec ~/.config/i3/scripts/workspace.sh --invert switch 5
-bindsym $mod+$alt+6 exec ~/.config/i3/scripts/workspace.sh --invert switch 6
-bindsym $mod+$alt+7 exec ~/.config/i3/scripts/workspace.sh --invert switch 7
-bindsym $mod+$alt+8 exec ~/.config/i3/scripts/workspace.sh --invert switch 8
-bindsym $mod+$alt+9 exec ~/.config/i3/scripts/workspace.sh --invert switch 9
-bindsym $mod+$alt+0 exec ~/.config/i3/scripts/workspace.sh --invert switch 10
-
-# move focused container to workspace
-bindsym $mod+Shift+1 exec ~/.config/i3/scripts/workspace.sh move 1
-bindsym $mod+Shift+2 exec ~/.config/i3/scripts/workspace.sh move 2
-bindsym $mod+Shift+3 exec ~/.config/i3/scripts/workspace.sh move 3
-bindsym $mod+Shift+4 exec ~/.config/i3/scripts/workspace.sh move 4
-bindsym $mod+Shift+5 exec ~/.config/i3/scripts/workspace.sh move 5
-bindsym $mod+Shift+6 exec ~/.config/i3/scripts/workspace.sh move 6
-bindsym $mod+Shift+7 exec ~/.config/i3/scripts/workspace.sh move 7
-bindsym $mod+Shift+8 exec ~/.config/i3/scripts/workspace.sh move 8
-bindsym $mod+Shift+9 exec ~/.config/i3/scripts/workspace.sh move 9
-bindsym $mod+Shift+0 exec ~/.config/i3/scripts/workspace.sh move 10
-
-# move (other screen)
-bindsym $mod+$alt+Shift+1 exec ~/.config/i3/scripts/workspace.sh --invert move 1
-bindsym $mod+$alt+Shift+2 exec ~/.config/i3/scripts/workspace.sh --invert move 2
-bindsym $mod+$alt+Shift+3 exec ~/.config/i3/scripts/workspace.sh --invert move 3
-bindsym $mod+$alt+Shift+4 exec ~/.config/i3/scripts/workspace.sh --invert move 4
-bindsym $mod+$alt+Shift+5 exec ~/.config/i3/scripts/workspace.sh --invert move 5
-bindsym $mod+$alt+Shift+6 exec ~/.config/i3/scripts/workspace.sh --invert move 6
-bindsym $mod+$alt+Shift+7 exec ~/.config/i3/scripts/workspace.sh --invert move 7
-bindsym $mod+$alt+Shift+8 exec ~/.config/i3/scripts/workspace.sh --invert move 8
-bindsym $mod+$alt+Shift+9 exec ~/.config/i3/scripts/workspace.sh --invert move 9
-bindsym $mod+$alt+Shift+0 exec ~/.config/i3/scripts/workspace.sh --invert move 10
-
-# first 1-10 on left monitor
-workspace $ws1  output $left
-workspace $ws2  output $left
-workspace $ws3  output $left
-workspace $ws4  output $left
-workspace $ws5  output $left
-workspace $ws6  output $left
-workspace $ws7  output $left
-workspace $ws8  output $left
-workspace $ws9  output $left
-workspace $ws10 output $left
-
-# 11-20 on right
-workspace $ws11 output $right
-workspace $ws12 output $right
-workspace $ws13 output $right
-workspace $ws14 output $right
-workspace $ws15 output $right
-workspace $ws16 output $right
-workspace $ws17 output $right
-workspace $ws18 output $right
-workspace $ws19 output $right
-workspace $ws20 output $right
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
 
 ###
 # autostart
 ###
 
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
+# screen locker
 exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.config/i3/scripts/lock.sh
 
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
+# network applet
 exec --no-startup-id nm-applet
 
-# nitrogen, wallpaper
-exec --no-startup-id nitrogen --set-tiled ~/wallpapers/wallpaper.png --save
+# wallpaper
+exec --no-startup-id nitrogen --set-tiled ~/wallpaper.png --save
 
-# seafile applet
 exec --no-startup-id nextcloud --background
 
-# polybar, bar
+# bar
 exec_always --no-startup-id ~/.config/i3/scripts/bar.sh
 
-# picom, compositor
+# compositor
 exec_always --no-startup-id picom
 
-# dunst, notification daemon
+# notifications
 exec --no-startup-id dunst
 
-# kde connect indicator
 exec --no-startup-id kdeconnect-indicator
 
-exec --no-startup-id "steam-runtime -silent"
 
+###
+# bindings
+###
 
-# start a terminal
+# terminal
 bindsym $mod+Return exec alacritty
 
-# kill focused window
+# close focused window
 bindsym $mod+q kill
 
-# rofi
+# menu
 bindsym $mod+d exec rofi -show combi
 
-
+# move between windows
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
+# move windows
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# split in horizontal orientation
-bindsym $mod+semicolon split h
-
-# split in vertical orientation
-bindsym $mod+apostrophe split v
-
-# enter fullscreen mode for the focused container
+# fullscreen active window
 bindsym $mod+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout toggle split
-bindsym $mod+t layout tabbed
+# next window is split vertically/horizontally
+bindsym $mod+semicolon split h
+bindsym $mod+apostrophe split v
 
-# toggle tiling / floating
+# toggle from floating to tiling
 bindsym $mod+Shift+space floating toggle
 
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# lock screen
+bindsym $mod+w exec loginctl lock-session
 
-# focus the parent container
-bindsym $mod+a focus parent
+# volume
+bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume 0 +5%"
+bindsym XF86AudioLowerVolume exec "pactl set-sink-volume 0 -5%"
+bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle"
 
-bindsym $mod+w exec "loginctl lock-session"
+# backlight
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 10"
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 10"
 
-# toggle music / video
+# pause music
 bindsym $mod+p exec "mpc toggle"
 
-# emoji selector
-bindsym $mod+period exec "rofi -modi emoji -show emoji"
-
-## dunst
 # close notification
-bindsym $mod+n exec "dunstctl close"
-# clear notifications
-bindsym $mod+Shift+n exec "dunstctl close-all"
-# show last notification
-bindsym $mod+$alt+n exec "dunstctl history-pop"
-# show context menu
-bindsym $mod+$alt+Shift+n exec "dunstctl context"
+bindsym $mod+n exec dunstctl close
 
-
-
-# reload the configuration file
+# reload configuration
 bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+
+# restart i3
 bindsym $mod+Shift+r restart
 
-# resize window (you can also use the mouse for that)
+# resize window
+set $size 10
+
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+	bindsym h resize shrink width $size px 
+	bindsym j resize grow height $size px 
+	bindsym k resize shrink height $size px
+	bindsym l resize grow width $size px
 
-        # Pressing h will shrink the window’s width.
-        # Pressing l will grow the window’s width.
-        # Pressing j will shrink the window’s height.
-        # Pressing k will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+	# exit
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym $mod+r mode "default"
 }
 
 bindsym $mod+r mode "resize"
 
 mode "kill" {
-    bindsym Escape exec "killall xkill"
-    bindsym $mod+Shift+q exec "killall xkill"
+	bindsym Escape exec "killall xkill"
+	bindsym $mod+Shift+q exec "killall xkill"
 }
-
 bindsym --release $mod+Shift+q exec "sh -c 'xkill; i3-msg mode default'"; mode kill
 
 mode "snap" {
-	bindsym Escape exec "killall import"
+	bindsym Escape exec killall import
 }
-
 bindsym --release $mod+Shift+s exec "sh -c 'import png:- | xclip -sel clip -t image/png; i3-msg mode default'"; mode snap
-
-#bindsym $mod+$alt+l move workspace to output $right
-bindsym $mod+$alt+h move workspace to output $left
-
-# watch copied video link
-bindsym $mod+v exec sh -c '\-w "$(xclip -sel clip -o)"'
-
-for_window [instance="Godot_Engine"] floating enable
-for_window [class="mpv"] floating enable
-for_window [class="zoom"] floating enable
-for_window [class="lattice"] floating enable

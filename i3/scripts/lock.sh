@@ -25,7 +25,7 @@ BAD=#bf616a
 
 NEUTRAL=#ebcb8b
 
-i3lock -i ~/wallpapers/wallpaper.png -t \
+i3lock -i ~/wallpaper.png -t \
     --inside-color='#00000000' --insidever-color='#00000000' --insidewrong-color='#00000000' --line-color='#00000000' \
     --ring-color="$RING" \
     --ringver-color="$NEUTRAL" \
