@@ -163,7 +163,7 @@ exec --no-startup-id dunst
 # kde connect indicator
 exec --no-startup-id kdeconnect-indicator
 
-exec --no-startup-id "steam-runtime -silent"
+exec --no-startup-id "~/.config/i3/scripts/block-screensaver-inhibit.sh steam-runtime -silent"
 
 
 # start a terminal
@@ -271,7 +271,7 @@ bindsym --release $mod+Shift+s exec "sh -c 'import png:- | xclip -sel clip -t im
 bindsym $mod+$alt+h move workspace to output $left
 
 # watch copied video link
-bindsym $mod+v exec sh -c '\-w "$(xclip -sel clip -o)"'
+bindsym $mod+v exec sh -c 'mpv --profile=youtube "$(xclip -sel clip -o)"'
 
 for_window [instance="Godot_Engine"] floating enable
 for_window [class="mpv"] floating enable
