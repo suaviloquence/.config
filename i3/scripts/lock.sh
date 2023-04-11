@@ -1,14 +1,5 @@
 #!/bin/sh
 #vim: ft=sh
-# housekeeping
-mpc status | tail -n 2 | grep 'playing' > /dev/null
-PLAYING=$?
-
-
-if [ $PLAYING -eq 0 ]; then
-    mpc pause
-fi
-
 dunstctl set-paused true
 
 
@@ -33,10 +24,6 @@ i3lock -i ~/wallpapers/wallpaper.png -t \
     --separator-color="$SEPARATOR" \
     --keyhl-color="$ACCENT" --bshl-color="$ACCENT" \
     --verif-color="$TEXT" --wrong-color="$TEXT" -n
-if [ "$PLAYING" -eq 0 ]; then
-    sleep 2  # wait to put headphones on lol
-    mpc play
-fi
 
 dunstctl set-paused false
 
