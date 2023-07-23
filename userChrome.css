@@ -1,0 +1,41 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+:root {
+	--custom-blue: #81a1c1;
+	--custom-purple: #b48ead;
+}
+
+.identity-color-turquoise {
+	--identity-tab-color: #88c0d0 !important;
+	--identity-icon-color: #88c0d0 !important;
+}
+
+.identity-color-red {
+	--identity-tab-color: #bf616a !important;
+	--identity-icon-color: #bf616a !important;
+}
+
+.identity-color-orange {
+	--identity-tab-color: #d08770 !important;
+	--identity-icon-color: #d08770 !important;
+}
+
+.identity-color-yellow {
+	--identity-tab-color: #ebcb8b !important;
+	--identity-icon-color: #ebcb8b !important;
+}
+
+.identity-color-green {
+	--identity-tab-color: #a3be8c !important;
+	--identity-icon-color: #a3be8c !important;
+}
+
+.identity-color-blue {
+	--identity-tab-color: #5e81ac !important;
+	--identity-icon-color: #5e81ac !important;
+}
+
+.identity-color-purple {
+	--identity-tab-color: #b48ead !important;
+	--identity-icon-color: #b48ead !important;
+}
